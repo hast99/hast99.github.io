@@ -34,7 +34,7 @@
     </div>
 </div>
 
-<section id="body" class="">
+<section id="content-to-download" class="">
 
     <div class="container">
 
@@ -259,13 +259,19 @@
             <div class="section-portfolio">
 
                 <h2 class="section-title">Portfolio</h2>
-                
+           
                 <h3 class="section-item-title-2"><i class="fa fa-briefcase"></i>  QA Automation Projects</h3>
 
                 <div class="resume-item">
                     <h3 class="section-item-title-1">API Automation Testing</h3>
                     <h4 class="job">Playwright / <a href="https://github.com/hast99/api-automation-playwright" target="_blank" style="color: #00bcd4; text-decoration: none;">View on GitHub <i class="fa fa-external-link"></i></a></h4>
-                    <p>Membangun kerangka kerja (framework) otomatisasi pengujian API menggunakan Playwright untuk memvalidasi respons, status code, dan struktur data dari *endpoint* secara efisien.</p>
+                    <p>Membangun kerangka kerja (framework) otomatisasi pengujian API menggunakan Playwright untuk memvalidasi respons, status code, dan struktur data dari endpoint secara efisien.</p>
+                </div>
+                
+                <div class="resume-item">
+                    <h3 class="section-item-title-1">Web UI Automation</h3>
+                    <h4 class="job">Selenium JS & Mocha / <a href="https://github.com/hast99/selenium-demoblaze-js" target="_blank" style="color: #00bcd4; text-decoration: none;">View on GitHub <i class="fa fa-external-link"></i></a></h4>
+                    <p>Merancang dan mengeksekusi kerangka kerja pengujian End-to-End (E2E) otomatis menggunakan Selenium WebDriver dan JavaScript. Mengimplementasikan pendekatan <i>Page Object Model</i> (POM) untuk memvalidasi fungsionalitas UI pada situs e-commerce Demoblaze.</p>
                 </div>
 
                 <div class="resume-item">
@@ -278,6 +284,13 @@
                     <h3 class="section-item-title-1">Web End-to-End (E2E) Automation Testing</h3>
                     <h4 class="job">Cypress / <a href="https://github.com/hast99/cypress-automation" target="_blank" style="color: #00bcd4; text-decoration: none;">View on GitHub <i class="fa fa-external-link"></i></a></h4>
                     <p>Mengembangkan skenario pengujian otomatis End-to-End (E2E) menggunakan Cypress untuk memvalidasi alur pengguna (user flow) dan memastikan keandalan aplikasi web.</p>
+                </div>
+
+                <!-- PROJECT K6 DITAMBAHKAN DI SINI -->
+                <div class="resume-item">
+                    <h3 class="section-item-title-1">API Performance & Load Testing</h3>
+                    <h4 class="job">K6 / <a href="https://github.com/hast99/K6-automarion-demoblaze" target="_blank" style="color: #00bcd4; text-decoration: none;">View on GitHub <i class="fa fa-external-link"></i></a></h4>
+                    <p>Merancang dan mengeksekusi skenario pengujian kinerja (Performance & Load Testing) menggunakan K6. Menguji <i>endpoint</i> Demoblaze untuk mengukur metrik keandalan sistem seperti waktu respons, tingkat kegagalan (error rate), dan batas kapasitas server saat menangani ribuan pengguna serentak (Virtual Users).</p>
                 </div>
 
             </div>
@@ -343,10 +356,24 @@
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="vendor/cross-browser.js"></script>
 <script src="js/main.js"></script>
-
 <script src="vendor/html5shiv.js"></script>
 <script src="vendor/respond.min.js"></script>
 
-</body>
+<!-- SCRIPT UNTUK FITUR CONVERT PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    function generatePDF() {
+        const element = document.getElementById('content-to-download');
+        const opt = {
+            margin:       0,
+            filename:     'Portfolio_Hafidh_Syahputra.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+    }
+</script>
 
+</body>
 </html>
